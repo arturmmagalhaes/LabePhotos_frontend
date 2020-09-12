@@ -1,6 +1,6 @@
 import React from 'react';
-import * as Buttons from '../components/buttons';
-import * as Div from '../components/divs';
+import * as Buttons from '../components/Buttons';
+import * as Div from '../components/Divs';
 
 export default function Home() {
     return (

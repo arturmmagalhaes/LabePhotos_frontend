@@ -1,13 +1,52 @@
 import styled from 'styled-components';
 
+//Header
+export const Header = styled.div`
+    background-color: #FFF;
+    color: #F00;
+    font-family: 'Abel', sans-serif;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 42px;
+    line-height: 59px;
+    text-align: center;
+    height: 75px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+`
+
+//Footer
+export const Footer = styled.div`
+    height: 75px;
+    background-color: #FFF;
+
+`
+
 export const Container = styled.div`
     display: grid;
     width: 375px;
-    height: 812px;
+    max-height: 812px;
     background-color: #FF0000;
     justify-content: center;
     align-items: center;
 `
+
+export const ContainerSecundario = styled.div`
+    width: 375px;
+    min-height: 812px;
+    max-height: 812px;
+    background-color: #FF0000;
+    justify-content: center;
+    align-items: center;
+`
+
+export const DivContent = styled.div`
+    display: grid;
+    height: 662px;
+    justify-content: center;
+    align-items: center;
+`;
 
 export const Logo = styled.div`
     font-family: 'Abel', sans-serif;
@@ -28,3 +67,11 @@ export const DivButtons = styled.div`
     align-items: center;
     margin-top: 15px;
 `
+
+export const DivInputs = styled.div`
+    display: grid;
+    grid-row-gap: 15px;
+    justify-content: center;
+    align-items: center;
+`
+

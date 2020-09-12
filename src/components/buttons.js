@@ -14,3 +14,10 @@ export const MiddleButton = styled.button`
     text-align: center;
     color: #FF0000;
 `
+
+export const ConfirmButton = styled.button`
+    cursor: pointer;
+    background-color: #EEE;
+    width: 292px;
+    padding: 10px 0px;
+`
