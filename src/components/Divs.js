@@ -34,7 +34,7 @@ export const Icon = styled.div`
 export const Container = styled.div`
     display: grid;
     width: 375px;
-    max-height: 812px;
+    height: 812px;
     background-color: #FF0000;
     justify-content: center;
     align-items: center;
