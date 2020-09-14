@@ -6,7 +6,7 @@ import Footer from '../components/Footer';
 
 export default function SignUp() {
     return (
-        <Div.ContainerSecundario>
+        <Div.SecundaryContainer>
           <Div.Header>SIGN UP</Div.Header>
           <Div.DivContent>
             <Div.DivInputs>
@@ -19,6 +19,6 @@ export default function SignUp() {
             </Div.DivInputs>
           </Div.DivContent>
           <Footer />
-        </Div.ContainerSecundario>
+        </Div.SecundaryContainer>
     )
 }

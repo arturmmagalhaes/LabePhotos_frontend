@@ -5,7 +5,7 @@ import * as Buttons from '../components/Buttons';
 
 export default function SignUp() {
     return (
-        <Div.ContainerSecundario>
+        <Div.SecundaryContainer>
           <Div.Header>SIGN IN</Div.Header>
           <Div.DivContent>
             <Div.DivInputs>
@@ -14,6 +14,6 @@ export default function SignUp() {
               <Buttons.ConfirmButton>submit</Buttons.ConfirmButton>
             </Div.DivInputs>
           </Div.DivContent>
-        </Div.ContainerSecundario>
+        </Div.SecundaryContainer>
     )
 }

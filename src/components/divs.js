@@ -18,11 +18,19 @@ export const Header = styled.div`
 
 //Footer
 export const Footer = styled.div`
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    align-items: center;
     height: 75px;
     background-color: #FFF;
-
 `
 
+export const Icon = styled.div`
+    display: grid;
+    justify-content: center;
+`
+
+//Rest
 export const Container = styled.div`
     display: grid;
     width: 375px;
@@ -32,7 +40,7 @@ export const Container = styled.div`
     align-items: center;
 `
 
-export const ContainerSecundario = styled.div`
+export const SecundaryContainer = styled.div`
     width: 375px;
     min-height: 812px;
     max-height: 812px;
@@ -75,3 +83,7 @@ export const DivInputs = styled.div`
     align-items: center;
 `
 
+export const Image = styled.img`
+    width: 301px;
+    height: 244px;
+`
