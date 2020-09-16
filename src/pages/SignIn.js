@@ -5,6 +5,7 @@ import * as Div from '../components/Divs';
 import * as Input from '../components/Inputs';
 import * as Buttons from '../components/Buttons';
 import { useHistory } from 'react-router-dom';
+import axios from 'axios';
 
 export default function SignUp() {
     const history = useHistory();
@@ -21,11 +22,12 @@ export default function SignUp() {
     const onSubmitFunction = (event) => {
       event.preventDefault();
 
-      api.post('signin', form)
+      axios.post('http://localhost:3003/signin', form)
         .then(response => {
+          console.log(response.data)
+          localStorage.setItem("token",(response.data.token));
+          localStorage.setItem("user", JSON.stringify(response.data.user));
           history.push('feed');
-          localStorage.setItem("token", JSON.stringify(response.data.token));
-          console.log(response);
         })
         .catch(error => {
           alert("Algo deu errado!");

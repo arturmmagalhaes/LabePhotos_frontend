@@ -54,6 +54,7 @@ export const DivContent = styled.div`
     height: 662px;
     justify-content: center;
     align-items: center;
+    overflow: scroll;
 `;
 
 export const Logo = styled.div`
@@ -81,6 +82,11 @@ export const DivInputs = styled.div`
     grid-row-gap: 15px;
     justify-content: center;
     align-items: center;
+`
+export const Card = styled.div`
+    border-radius: 12px;
+    background-color: #FFF;
+    margin: 0px 0px 20px 0px;
 `
 
 export const Image = styled.img`

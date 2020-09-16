@@ -21,3 +21,16 @@ export const ConfirmButton = styled.button`
     width: 292px;
     padding: 10px 0px;
 `
+
+export const CreateButton = styled.button`
+    width: 60px;
+    height: 60px;
+    border-radius: 50%;
+    margin: 20px 0px;
+    background-color: #FFF;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 36px;
+    line-height: 42px;
+    color: #FF0000;
+`
