@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState } from 'react';
 import api from '../services/api';
 import useForm from '../customHooks/useForm';
 import * as Div from '../components/Divs';
@@ -12,7 +12,8 @@ export default function SignUp() {
       email: '',
       password: ''
     });
-
+    const [errorMessage, setErrorMessage] = useState('');
+    
     const handleInput = event => {
       const {name, value} = event.target;
       handleForm(name, value);
@@ -23,12 +24,12 @@ export default function SignUp() {
 
       api.post('signin', form)
         .then(response => {
-          console.log(response.data)
           localStorage.setItem("token",(response.data.token));
           localStorage.setItem("user", JSON.stringify(response.data.user));
           history.push('feed');
         })
         .catch(error => {
+          setErrorMessage(error.message);
           alert("Algo deu errado!");
         })
     }
@@ -40,6 +41,7 @@ export default function SignUp() {
               <Div.DivInputs>
                 <Input.InputDefault 
                   name="email"
+                  type="email"
                   placeholder="email"
                   onChange={handleInput}
                   value={form.email}
@@ -53,6 +55,8 @@ export default function SignUp() {
                   required />
                <Buttons.ConfirmButton>submit</Buttons.ConfirmButton>
               </Div.DivInputs>
+              {errorMessage !== '' &&
+              <div>{errorMessage}</div>}
             </form>
           </Div.DivContent>
         </Div.SecundaryContainer>

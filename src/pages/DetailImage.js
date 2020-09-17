@@ -10,7 +10,7 @@ export default function DetailImage() {
 
     const history = useHistory();
     const params = useParams();
-    const [token] = useState(JSON.parse(localStorage.getItem('token')));
+    const [token] = useState(localStorage.getItem('token'));
     const [data, setData] = useState('');
     const [hashtag, setHashtag] = useState([]);
 
@@ -27,7 +27,8 @@ export default function DetailImage() {
             setData(response.data.message);
             setHashtag(response.data.message.hashtag);
         }).catch(error => {
-            console.error(error);
+            alert('Reconecte na Aplicação');
+            history.replace('/signin');
         })
     },[]);
 
@@ -35,14 +36,15 @@ export default function DetailImage() {
         <Div.SecundaryContainer>
             <Div.Header>IMAGE</Div.Header>
             <Div.DivContent>
+                {data !== '' &&
                 <div>
                     <Div.Image src={data.file}/>
                     <P.PWhite>{data.title && String(data.title).toUpperCase()}</P.PWhite>
-                    <P.PWhite>{hashtag.map(element => {
+                    <P.PWhite>{hashtag.length > 0 && hashtag.map(element => {
                         return (<span key={element}>{element} </span>)
                     })}</P.PWhite>
                     <P.PWhite>{data.collection && String(data.collection).toUpperCase()}</P.PWhite>
-                </div>
+                </div>}
             </Div.DivContent>
             <Footer />
         </Div.SecundaryContainer>
