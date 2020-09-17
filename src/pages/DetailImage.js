@@ -4,7 +4,7 @@ import * as Div from '../components/Divs';
 import Footer from '../components/Footer';
 import AssignmentIcon from '@material-ui/icons/Assignment';
 import * as P from '../components/Paragraph';
-import axios from 'axios';
+import api from '../services/api';
 
 export default function DetailImage() {
 
@@ -19,7 +19,7 @@ export default function DetailImage() {
     }
 
     useEffect(() => {
-        axios.get(`http://localhost:3003/photo/${params.id}`, {
+        api.get(`photo/${params.id}`, {
             headers: {
                 Authorization: token
             }
