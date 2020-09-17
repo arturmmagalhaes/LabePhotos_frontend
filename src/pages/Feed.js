@@ -23,7 +23,8 @@ export default function Feed() {
         }).then(response => {
             setData(response.data.data);
         }).catch(error => {
-            console.error(error);
+            alert('Reconecte na Aplicação');
+            history.replace('/signin');
         })
     },[]);
     
