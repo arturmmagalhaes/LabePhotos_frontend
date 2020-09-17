@@ -1,5 +1,5 @@
 import React from 'react';
-import axios from 'axios';
+import api from '../services/api';
 import { useHistory } from 'react-router-dom';
 import * as Div from '../components/Divs';
 import * as Input from '../components/Inputs';
@@ -31,7 +31,7 @@ export default function CreateImage() {
         console.log(form)
         event.preventDefault();
         console.log(token);
-        axios.post(`http://localhost:3003/photo/create`, form, {
+        api.post(`photo/create`, form, {
             headers: {
                 Authorization: token
             }

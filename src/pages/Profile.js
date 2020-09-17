@@ -8,7 +8,7 @@ import * as P from '../components/Paragraph';
 export default function Profile() {
     const history = useHistory();
     const [user] = useState(JSON.parse(localStorage.getItem("user")));
-    const [token] = useState(localStorage.getItem("token"))
+    const [token] = useState(localStorage.getItem("token"));
     
     if(!token) {
       history.replace('/signin');

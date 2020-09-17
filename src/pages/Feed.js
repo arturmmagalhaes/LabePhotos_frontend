@@ -4,7 +4,7 @@ import * as Div from '../components/Divs';
 import * as Button from '../components/Buttons';
 import * as P from '../components/Paragraph';
 import Footer from '../components/Footer';
-import axios from 'axios';
+import api from '../services/api';
 
 export default function Feed() {
     const history = useHistory();
@@ -16,7 +16,7 @@ export default function Feed() {
     }
 
     useEffect(() => {
-        axios.get('http://localhost:3003/photo/', {
+        api.get('photo/', {
             headers: {
                 Authorization: token
             }
@@ -35,8 +35,7 @@ export default function Feed() {
         history.push('/createimage');
     }
 
-    return(
-        <Div.SecundaryContainer>
+    return(<Div.SecundaryContainer>
             <Div.Header>LABEPHOTOS</Div.Header>
             <Div.DivContent>
                 <Button.CreateButton onClick={createImage}>+</Button.CreateButton>

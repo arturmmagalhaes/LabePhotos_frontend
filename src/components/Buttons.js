@@ -33,4 +33,5 @@ export const CreateButton = styled.button`
     font-size: 36px;
     line-height: 42px;
     color: #FF0000;
+    cursor: pointer;
 `
