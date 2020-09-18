@@ -1,5 +1,5 @@
 import React from 'react';
-import { getByText, render, wait } from '@testing-library/react';
+import { render, wait } from '@testing-library/react';
 import { createMemoryHistory } from 'history';
 import { Router } from 'react-router-dom';
 import DetailImage from './DetailImage';

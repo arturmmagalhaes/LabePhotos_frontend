@@ -1,36 +1,47 @@
 import React from 'react';
-import { render } from '@testing-library/react';
+import { render, wait } from '@testing-library/react';
 import CreateImage from './CreateImage';
 import { Router } from 'react-router-dom';
 import { createMemoryHistory } from 'history';
 import userEvent from '@testing-library/user-event';
+import api from '../services/api';
 
-describe.skip("Test CreateImagePage", () => {
-    const history = createMemoryHistory();
+api.post = jest.fn().mockResolvedValue();
+
+describe("Test CreateImagePage", () => {
     
-    test("CreateImage", () => {
+    test("CreateImage", async () => {
+        window.localStorage.setItem("token","JWT");
+        
+        expect.assertions(5);
 
-        const { container, getByPlaceholderText } = render(
+        const history = createMemoryHistory();
+        const { container, getByPlaceholderText, getByText } = render(
             <Router history={history}>
                 <CreateImage />
             </Router>);
         
-        //console.log(container.innerHTML);
+        await wait(() => {
 
-        const inputTitle = getByPlaceholderText("title");
-        const inputFile = getByPlaceholderText("file");
-        const inputCollection = getByPlaceholderText("collection");
-        const inputHashtag = getByPlaceholderText("hashtag");
+            const inputTitle = getByPlaceholderText("title");
+            const inputFile = getByPlaceholderText("file");
+            const inputCollection = getByPlaceholderText("collection");
+            const inputHashtag = getByPlaceholderText("hashtag");
+            const buttonSubmit = getByText("submit");
 
-        userEvent.type(inputTitle, "Esquilo");
-        userEvent.type(inputFile, "http://");
-        userEvent.type(inputCollection, "Animal");
-        userEvent.type(inputHashtag, "#Animal");
-        
-        expect(inputTitle).toHaveValue("Esquilo");
-        expect(inputFile).toHaveValue("http://");
-        expect(inputCollection).toHaveValue("Animal");
-        expect(inputHashtag).toHaveValue("#Animal");
+            userEvent.type(inputTitle, "Esquilo");
+            userEvent.type(inputFile, "http://");
+            userEvent.type(inputCollection, "Animal");
+            userEvent.type(inputHashtag, "#Animal");
 
+            //console.log(container.innerHTML);
+            userEvent.click(buttonSubmit);
+            
+            expect(inputTitle).toHaveValue("Esquilo");
+            expect(inputFile).toHaveValue("http://");
+            expect(inputCollection).toHaveValue("Animal");
+            expect(inputHashtag).toHaveValue("#Animal");
+            expect(api.post).toHaveBeenCalled();
+        });
     });
 })
