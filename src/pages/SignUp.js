@@ -23,7 +23,6 @@ export default function SignUp() {
 
     const onSubmitFunction = (event) => {
       event.preventDefault();
-      console.log(form);
       api.post('signup', form)
         .then(response => {
           alert("Usuário criado!");

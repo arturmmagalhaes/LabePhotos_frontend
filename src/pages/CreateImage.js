@@ -30,13 +30,11 @@ export default function CreateImage() {
     const onSubmitFunction = (event) => {
         console.log(form)
         event.preventDefault();
-        console.log(token);
         api.post(`photo/create`, form, {
             headers: {
                 Authorization: token
             }
         }).then(response => {
-            console.log(response.data);
             history.replace('/feed');
         }).catch(error => {
             console.error(error);
