@@ -46,6 +46,8 @@ export default function DetailImage() {
                     })}</P.PWhite>
                     <P.PWhite>{data.collection && String(data.collection).toUpperCase()}</P.PWhite>
                 </div>}
+                {data === '' && 
+                <P.PWhite>Carregando</P.PWhite>}
             </Div.DivContent>
             <Footer />
         </Div.SecundaryContainer>

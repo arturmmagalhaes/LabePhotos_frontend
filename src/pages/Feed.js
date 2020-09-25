@@ -48,6 +48,8 @@ export default function Feed() {
                             <P.PCard>{element.title}</P.PCard>
                         </Div.Card>
                 )})}
+                {data.length === 0 && 
+                <P.PWhite>Ainda não guardou suas imagens</P.PWhite>}
             </Div.DivContent>
             <Footer />
         </Div.SecundaryContainer>
