@@ -5,6 +5,7 @@ import * as Button from '../components/Buttons';
 import * as P from '../components/Paragraph';
 import Footer from '../components/Footer';
 import api from '../services/api';
+import Header from '../components/Header';
 
 export default function Feed() {
     const history = useHistory();
@@ -37,7 +38,7 @@ export default function Feed() {
     }
 
     return(<Div.SecundaryContainer>
-            <Div.Header>LABEPHOTOS</Div.Header>
+            <Header page="LABEPHOTOS" />
             <Div.DivContent>
                 <Button.CreateButton onClick={createImage}>+</Button.CreateButton>
                 {data.length > 0 && data.map(element => {

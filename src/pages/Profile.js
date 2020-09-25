@@ -4,6 +4,7 @@ import * as Div from '../components/Divs';
 import Footer from '../components/Footer';
 import AssignmentIcon from '@material-ui/icons/Assignment';
 import * as P from '../components/Paragraph';
+import Header from '../components/Header';
 
 export default function Profile() {
     const history = useHistory();
@@ -16,7 +17,7 @@ export default function Profile() {
     
     return(
         <Div.SecundaryContainer>
-            <Div.Header>LABEPHOTOS</Div.Header>
+            <Header page="LABEPHOTOS" />
             <Div.DivContent>
                 <div>
                     <AssignmentIcon style={{fontSize: 180, color: 'white'}} />

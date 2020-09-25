@@ -6,6 +6,7 @@ import * as Input from '../components/Inputs';
 import * as Buttons from '../components/Buttons';
 import Footer from '../components/Footer';
 import useForm from '../customHooks/useForm';
+import Header from '../components/Header';
 
 
 export default function CreateImage() {
@@ -43,7 +44,7 @@ export default function CreateImage() {
 
     return (<>
         <Div.SecundaryContainer>
-          <Div.Header>CREATE IMAGE</Div.Header>
+          <Header page="CREATE" />
           <Div.DivContent>
             <form onSubmit={onSubmitFunction}>
               <Div.DivInputs>

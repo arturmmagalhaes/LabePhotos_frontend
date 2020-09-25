@@ -5,6 +5,7 @@ import * as Div from '../components/Divs';
 import * as Input from '../components/Inputs';
 import * as Buttons from '../components/Buttons';
 import { useHistory } from 'react-router-dom';
+import Header from '../components/Header';
 
 export default function SignUp() {
     const history = useHistory();
@@ -35,7 +36,7 @@ export default function SignUp() {
     }
 
     return (<Div.SecundaryContainer>
-          <Div.Header>SIGN IN</Div.Header>
+          <Header page="SIGN IN"/>
           <Div.DivContent>
             <form onSubmit={onSubmitFunction}>
               <Div.DivInputs>
