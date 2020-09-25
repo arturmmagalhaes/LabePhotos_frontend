@@ -21,8 +21,8 @@ https://trello.com/b/CPOm1ara/projeto-fullstack
 
 Para copiar o projeto:
 ```bash
-  $ git clone https://github.com/arturmmagalhaes/4eddit.git
-  $ cd 4eddit
+  $ git clone https://github.com/arturmmagalhaes/LabePhotos_frontend.git
+  $ cd LabePhotos_frontend
 ```
 Para instalar as dependências e rodar o sistema:
 ```bash
