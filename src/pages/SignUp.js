@@ -13,7 +13,8 @@ export default function SignUp() {
       name: '',
       nickname: '',
       email: '',
-      password: ''
+      password: '',
+      confirmPassword: ''
     });
 
     const handleInput = event => {
@@ -23,7 +24,9 @@ export default function SignUp() {
 
     const onSubmitFunction = (event) => {
       event.preventDefault();
-      api.post('signup', form)
+
+      if(form.password === form.confirmPassword){
+        api.post('signup', form)
         .then(response => {
           alert("Usuário criado!");
           history.push('/signin');
@@ -31,6 +34,9 @@ export default function SignUp() {
         .catch(error => {
           alert('Algo deu errado!');
         });
+      } else {
+        alert('Senhas não estão iguais.')
+      }
     }
 
     return (
@@ -54,6 +60,7 @@ export default function SignUp() {
                 <Input.InputDefault 
                   name="email"
                   placeholder="email"
+                  type="email"
                   onChange={handleInput}
                   value={form.email}
                   required />
@@ -65,8 +72,12 @@ export default function SignUp() {
                   value={form.password}
                   required />
                 <Input.InputDefault 
-                  name="confirm"
-                  placeholder="confirm password" />
+                  name="confirmPassword"
+                  placeholder="confirm password" 
+                  type="password"
+                  onChange={handleInput}
+                  value={form.confirmPassword}
+                  required />
                 <Buttons.ConfirmButton>submit</Buttons.ConfirmButton>
               </Div.DivInputs>
             </form>
