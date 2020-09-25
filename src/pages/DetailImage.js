@@ -5,6 +5,7 @@ import Footer from '../components/Footer';
 import AssignmentIcon from '@material-ui/icons/Assignment';
 import * as P from '../components/Paragraph';
 import api from '../services/api';
+import Header from '../components/Header';
 
 export default function DetailImage() {
 
@@ -34,7 +35,7 @@ export default function DetailImage() {
 
     return(
         <Div.SecundaryContainer>
-            <Div.Header>IMAGE</Div.Header>
+            <Header page="IMAGE"/>
             <Div.DivContent>
                 {data !== '' &&
                 <div>
@@ -45,6 +46,8 @@ export default function DetailImage() {
                     })}</P.PWhite>
                     <P.PWhite>{data.collection && String(data.collection).toUpperCase()}</P.PWhite>
                 </div>}
+                {data === '' && 
+                <P.PWhite>Carregando</P.PWhite>}
             </Div.DivContent>
             <Footer />
         </Div.SecundaryContainer>

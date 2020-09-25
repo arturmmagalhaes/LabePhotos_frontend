@@ -4,7 +4,7 @@ import useForm from '../customHooks/useForm';
 import * as Div from '../components/Divs';
 import * as Input from '../components/Inputs';
 import * as Buttons from '../components/Buttons';
-import Footer from '../components/Footer';
+import Header from '../components/Header';
 import api from '../services/api';
 
 export default function SignUp() {
@@ -41,7 +41,7 @@ export default function SignUp() {
 
     return (
         <Div.SecundaryContainer>
-          <Div.Header>SIGN UP</Div.Header>
+          <Header page="SIGN UP"/>
           <Div.DivContent>
             <form onSubmit={onSubmitFunction}>
               <Div.DivInputs>
@@ -82,7 +82,6 @@ export default function SignUp() {
               </Div.DivInputs>
             </form>
           </Div.DivContent>
-          <Footer />
         </Div.SecundaryContainer>
     )
 }

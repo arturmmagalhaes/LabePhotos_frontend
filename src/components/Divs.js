@@ -12,9 +12,15 @@ export const Header = styled.div`
     text-align: center;
     height: 75px;
     display: flex;
-    justify-content: center;
+    justify-content: space-between;
     align-items: center;
 `
+
+export const BackPage = styled.div`
+    width: 20px;
+    padding: 12px;
+    cursor: pointer;
+`;
 
 //Footer
 export const Footer = styled.div`
@@ -22,7 +28,14 @@ export const Footer = styled.div`
     grid-template-columns: repeat(3, 1fr);
     align-items: center;
     height: 75px;
+    width: 400px;
     background-color: #FFF;
+    position: fixed;
+    bottom: 0;
+
+    @media (max-width: 1024px){
+        width: 100vw;
+    }
 `
 
 export const Icon = styled.div`
@@ -33,28 +46,37 @@ export const Icon = styled.div`
 //Rest
 export const Container = styled.div`
     display: grid;
-    width: 375px;
-    height: 812px;
+    width: 400px;
+    min-height: 100vh;
     background-color: #FF0000;
     justify-content: center;
     align-items: center;
+    margin: auto;
+
+    @media (max-width: 1024px){
+        width: 100vw;
+    }
 `
 
 export const SecundaryContainer = styled.div`
-    width: 375px;
-    min-height: 812px;
-    max-height: 812px;
+    width: 400px;
+    flex-grow: 1;
     background-color: #FF0000;
     justify-content: center;
     align-items: center;
+    margin: auto;
+
+    @media (max-width: 1024px){
+        width: 100vw;
+    }
 `
 
 export const DivContent = styled.div`
     display: grid;
-    height: 662px;
     justify-content: center;
     align-items: center;
     overflow: scroll;
+    height: 87vh;
 `;
 
 export const Logo = styled.div`
@@ -83,10 +105,12 @@ export const DivInputs = styled.div`
     justify-content: center;
     align-items: center;
 `
+
 export const Card = styled.div`
     border-radius: 12px;
     background-color: #FFF;
     margin: 0px 0px 20px 0px;
+    cursor: pointer;
 `
 
 export const Image = styled.img`
